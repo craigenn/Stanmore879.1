@@ -138,13 +138,14 @@ Public Class Form1
             deposit = Val(deposittxt.Text)
             time = Val(timetxt.Text)
             ' Call validaterange()
-            If deposit > 250001 And deposit <= 1 Then
+            Do Until deposit < 250001 And deposit >= 1
                 'this do until checks the deposit
 
                 deposittxt.Text = InputBox("Deposit must be between 1 and 250,000", "Deposit error", "")
 
                 Call validate()
-            End If
+            Loop
+
 
             Do Until time <= 36 And time >= 1
                     'this do until checks the time
